@@ -1,0 +1,17 @@
+observable
+sequesnce of data arrieves asyhnchronously over time
+http call is single item
+http response single item
+لما تعمل get request 
+هترجع http response as observable
+وبعين نحول الاوبسرفبل الى array
+we rovide the data to compponent that subscribed to the observable
+
+1 make http get req from the employee service using httpClientModule
+2 recive the observable and cast it into employee array
+3 subscribe  to the observable from employee list and employee details components
+4 assign the employee array to local variable in the component to use for binding
+
+
+rxjs
+reactive extension for javascript
