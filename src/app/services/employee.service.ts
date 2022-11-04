@@ -11,7 +11,7 @@ import { Observable, throwError, catchError } from 'rxjs';
 })
 export class EmployeeService {
 
-  private url: string = '/assets/data/employeesjdd.json';
+  private url: string = '/assets/data/employees.json';
   //register the service at module level to be acces by all component in this module
   constructor(private http: HttpClient) { }
 
