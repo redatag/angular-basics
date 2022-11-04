@@ -16,6 +16,7 @@ export class EmployeeListComponent implements OnInit {
 //implement app logic
 //used fior externel interactions (connecting db) employee.service.ts
   employees:any[] = [];
+  errorMsg = "";
   //   {id:1 , name:"reda", age: 33},
   //   {id:2 , name:"ahmed", age: 28},
   //   {id:3 , name:"malek", age: 20}
@@ -27,7 +28,14 @@ export class EmployeeListComponent implements OnInit {
     // this.employees = this.emploeeService.getEmloyees();
 
     //assighn the dat arecieved from the obserrvable to local employy array property
-    this.emploeeService.getEmloyees().subscribe(data => this.employees = data)
+    this.emploeeService.getEmloyees()
+        .subscribe({
+          next:  data => this.employees = data,
+          error: err => this.errorMsg = err,
+          complete: ()=> console.log('completes')
+        });
+
+
   }
 
 
