@@ -24,7 +24,10 @@ export class EmployeeListComponent implements OnInit {
 
   ngOnInit(): void {
     //called once the comp has been initialized
-    this.employees = this.emploeeService.getEmloyees();
+    // this.employees = this.emploeeService.getEmloyees();
+
+    //assighn the dat arecieved from the obserrvable to local employy array property
+    this.emploeeService.getEmloyees().subscribe(data => this.employees = data)
   }
 
 
